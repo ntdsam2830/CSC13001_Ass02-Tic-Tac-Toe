@@ -1,0 +1,54 @@
+﻿<Window x:Class="TicTacToe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToe"
+        mc:Ignorable="d"
+        Title="Tic Tac Toe" Height="470" Width="600" SizeChanged="GameCanvas_SizeChanged" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <FontFamily x:Key="test" >/Fonts/#Game On_PersonalUseOnly</FontFamily>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" MinWidth="150"/>
+            <ColumnDefinition Width="7*" MinWidth="350"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- Game Board -->
+        <Border BorderThickness="2" BorderBrush="Black" Grid.Column="1" Grid.Row="0" Grid.RowSpan="7">
+            <Canvas x:Name="GameCanvas" Background="White"
+                    MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
+                    SizeChanged="GameCanvas_SizeChanged"/>
+        </Border>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="TIC" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 115 0" FontSize="35" FontFamily="{StaticResource test}" Foreground="Blue"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="TAC" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 0" FontSize="35" FontFamily="{StaticResource test}" Foreground="Red"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="TOE" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="115 0 0 0" FontSize="35" FontFamily="{StaticResource test}" Foreground="Blue"/>
+
+        <Button Grid.Column="0" Grid.Row="1" Width="100" Height="25" Background="LightYellow" Content="New Game" Click="NewGame_Click" FontFamily="{StaticResource test}" FontSize="15" Focusable="False"/>
+        <Button Grid.Column="0" Grid.Row="2" Width="100" Height="25" Background="LightYellow" Content="Save Game" Click="Save_Click" FontFamily="{StaticResource test}" FontSize="15" Focusable="False"/>
+        <Button Grid.Column="0" Grid.Row="3" Width="100" Height="25" Background="LightYellow" Content="Load Game" Click="Load_Click" FontFamily="{StaticResource test}" FontSize="15" Focusable="False"/>
+        <Button Grid.Column="0" Grid.Row="4" Width="100" Height="25" Background="LightYellow" Content="Change Size" Click="Change_Click" FontFamily="{StaticResource test}" FontSize="15" Focusable="False"/>
+        <Button Grid.Column="0" Grid.Row="5" Width="100" Height="25" Background="LightYellow" Content="Quit" Click="Quit_Click" FontFamily="{StaticResource test}" FontSize="15" Focusable="False"/>
+        <StackPanel Grid.Column="0" Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" FontSize="10" Margin="10 5 11 0" Click="ToggleSoundButton_Click" BorderBrush="Transparent" Focusable="False">
+                <Image x:Name="SoundIcon" Source="Icons/volume.png" Width="40" Height="40"/>
+            </Button>
+            <Button Background="Transparent" BorderBrush="Transparent" FontSize="10" Margin="10 0 10 0" Click="FAQ_Click" Focusable="False">
+                <Image x:Name="FAQIcon" Source="Icons/conversation.png" Width="40" Height="40"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

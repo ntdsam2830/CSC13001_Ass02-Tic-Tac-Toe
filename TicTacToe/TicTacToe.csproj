@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Audio\background.mp3" />
+    <None Remove="Audio\lose.wav" />
+    <None Remove="Audio\mixkit-arcade-retro-changing-tab-206.wav" />
+    <None Remove="Audio\mixkit-casino-bling-achievement-2067.wav" />
+    <None Remove="Audio\mixkit-game-ball-tap-2073.wav" />
+    <None Remove="Audio\mixkit-player-jumping-in-a-video-game-2043.wav" />
+    <None Remove="Audio\mixkit-quick-jump-arcade-game-239.wav" />
+    <None Remove="Audio\mixkit-try-me-235.mp3" />
+    <None Remove="Audio\play.wav" />
+    <None Remove="Audio\win.wav" />
+    <None Remove="Fonts\Game On_PersonalUseOnly.ttf" />
+    <None Remove="Icons\conversation.png" />
+    <None Remove="Icons\mute.png" />
+    <None Remove="Icons\volume.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Audio\background.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\play.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\win.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Audio\lose.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Fonts\Game On_PersonalUseOnly.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\conversation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\mute.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\volume.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
